@@ -1,7 +1,7 @@
 /* Cleaning Data */
 data cleaned_tourism;
 	length Country_Name $300 Tourism_Type $20;
-	retain Country_Name "" Tourism_Type "";
+	retain Country_Name "Tourism_Type";
 	set cr.tourism(drop=_1995-_2013);
 	if A ne . then Country_Name=Country;
 	if lowcase(Country)="inbound tourism" then Tourism_Type="Inbound tourism";
